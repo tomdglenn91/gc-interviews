@@ -1,15 +1,16 @@
 import styled, { css } from "styled-components";
 
 const Card = styled.div`
+  border-radius: 5px;
   display: inline-flex;
   flex-direction: column;
   width: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
   transition: 0.3s;
   margin: 8px;
   width: 400px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #eee;
+  background-color: #fff;
   padding: 16px;
 `;
 
@@ -35,7 +36,9 @@ const CardTitleContainer = styled.div`
   text-align: center;
 `;
 const CardTitle = styled.div`
+  font-weight: bold;
   font-size: 2rem;
+  color: #9662c7;
 `;
 
 const CardSubTitle = styled.div`
