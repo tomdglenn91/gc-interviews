@@ -1,4 +1,4 @@
-import { PokemonCard } from "./PokemonCard";
+import { PokemonCard, CapturedPokemonCard } from "./PokemonCard";
 import { usePokemon } from "./use-pokemon";
 
 function App() {
@@ -6,9 +6,10 @@ function App() {
 
   return (
     <div>
-      {pokemon.map((p) => (
-        <PokemonCard key={p.name} pokemon={p} />
-      ))}
+      {pokemon.map((p) => {
+        const CardComponent = p.name[0] === "c" ? CapturedPokemonCard : PokemonCard;
+        return <CardComponent key={p.name} pokemon={p} />;
+      })}
     </div>
   );
 }

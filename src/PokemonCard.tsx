@@ -54,7 +54,9 @@ const Button = styled.button`
   margin: 0 8px;
 `;
 
-export const PokemonCard = ({ pokemon }: any) => {
+export const PokemonCard = ({ pokemon, Actions }: any) => {
+  console.log(Actions);
+
   return (
     <Card>
       <CardHeader>
@@ -72,9 +74,27 @@ export const PokemonCard = ({ pokemon }: any) => {
       </CardContent>
 
       <CardActions>
-        <Button>Cancel</Button>
-        <Button>Catch</Button>
+        {Actions ? (
+          <Actions />
+        ) : (
+          <>
+            <Button>Cancel</Button>
+            <Button>Catch</Button>
+          </>
+        )}
       </CardActions>
     </Card>
   );
 };
+
+const SuperActions = () => (
+  <>
+    <Button>Cancel</Button>
+    <Button>Train</Button>
+    <Button>Release</Button>
+  </>
+);
+
+export const CapturedPokemonCard = (props: any) => (
+  <PokemonCard {...props} Actions={SuperActions} />
+);
