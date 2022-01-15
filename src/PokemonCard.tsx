@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import styled, { css } from "styled-components";
 
 const Card = styled.div`
@@ -54,8 +55,10 @@ const Button = styled.button`
   margin: 0 8px;
 `;
 
-export const PokemonCard = ({ pokemon, Actions }: any) => {
-  console.log(Actions);
+export const PokemonCard = ({ pokemon, berry, Actions }: any) => {
+  const feed = useCallback(() => {
+    alert(`${pokemon.name} eats your ${berry}!`);
+  }, []);
 
   return (
     <Card>
@@ -79,7 +82,7 @@ export const PokemonCard = ({ pokemon, Actions }: any) => {
         ) : (
           <>
             <Button>Cancel</Button>
-            <Button>Catch</Button>
+            <Button onClick={feed}>Feed</Button>
           </>
         )}
       </CardActions>
