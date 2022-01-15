@@ -15,8 +15,12 @@ const Card = styled.div`
 
 const CardHeader = styled.div`
   display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   border-bottom: 1px solid #ccc;
+  padding-bottom: 16px;
 `;
 
 const CardAvatar = styled.div<{ url: string }>`
@@ -24,10 +28,12 @@ const CardAvatar = styled.div<{ url: string }>`
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  margin: 16px;
+  margin-bottom: 16px;
 `;
 
-const CardTitleContainer = styled.div``;
+const CardTitleContainer = styled.div`
+  text-align: center;
+`;
 const CardTitle = styled.div`
   font-size: 2rem;
 `;
@@ -39,10 +45,13 @@ const CardSubTitle = styled.div`
 
 const CardContent = styled.div`
   padding: 32px;
+  line-height: 1.5rem;
 `;
 
 const CardActions = styled.div`
   display: flex;
+  align-items: flex-end;
+  justify-content: end;
 `;
 
 const Button = styled.button`
