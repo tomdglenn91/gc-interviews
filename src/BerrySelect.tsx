@@ -1,13 +1,7 @@
-import { ChangeEventHandler, FC, ReactEventHandler, useCallback } from "react";
+import { FC, useCallback } from "react";
 import styled from "styled-components";
 
-const berries = ["Berry", "Gold Berry", "Mint Berry"] as const;
-export type Berry = typeof berries[number];
-
-export type BerrySelectProps = {
-  selectedBerry: Berry;
-  onBerrySelected: (berry: Berry) => void;
-};
+const berries = ["Berry", "Gold Berry", "Mint Berry"];
 
 const BerryTitle = styled.h1`
   margin-left: 8px;
@@ -20,9 +14,9 @@ const BerrySelecter = styled.select`
   width: 300px;
 `;
 
-export const BerrySelect: FC<BerrySelectProps> = ({ onBerrySelected, selectedBerry }) => {
-  const handleBerrySelected = useCallback<ChangeEventHandler<HTMLSelectElement>>((e) => {
-    onBerrySelected(e.currentTarget.value as Berry);
+export const BerrySelect: FC<any> = ({ onBerrySelected, selectedBerry }) => {
+  const handleBerrySelected = useCallback((e: any) => {
+    onBerrySelected(e.currentTarget.value);
   }, []);
 
   return (
