@@ -21,12 +21,9 @@ const BerrySelecter = styled.select`
 `;
 
 export const BerrySelect: FC<BerrySelectProps> = ({ onBerrySelected, selectedBerry }) => {
-  const handleBerrySelected = useCallback<ChangeEventHandler<HTMLSelectElement>>(
-    (e) => {
-      onBerrySelected(e.currentTarget.value as Berry);
-    },
-    [onBerrySelected]
-  );
+  const handleBerrySelected = useCallback<ChangeEventHandler<HTMLSelectElement>>((e) => {
+    onBerrySelected(e.currentTarget.value as Berry);
+  }, []);
 
   return (
     <>
