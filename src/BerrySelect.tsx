@@ -9,6 +9,12 @@ export type BerrySelectProps = {
   onBerrySelected: (berry: Berry) => void;
 };
 
+const BerryTitle = styled.h1`
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+`;
+
 const BerrySelecter = styled.select`
   height: 40px;
   width: 300px;
@@ -24,7 +30,7 @@ export const BerrySelect: FC<BerrySelectProps> = ({ onBerrySelected, selectedBer
 
   return (
     <>
-      <h1>Select Berry:</h1>
+      <BerryTitle>Select Berry:</BerryTitle>
 
       <BerrySelecter value={selectedBerry} onChange={handleBerrySelected}>
         {berries.map((berry) => (
