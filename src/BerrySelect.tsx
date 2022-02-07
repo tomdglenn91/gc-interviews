@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FC, ReactEventHandler, useCallback } from "react";
+import { ChangeEventHandler, FC, useCallback } from "react";
 import styled from "styled-components";
 
 const berries = ["Berry", "Gold Berry", "Mint Berry"] as const;
