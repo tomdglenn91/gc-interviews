@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable */
+import React, { useCallback } from "react";
 import styled, { css } from "styled-components";
 
 const Card = styled.div`
@@ -58,7 +59,11 @@ const Button = styled.button`
   margin: 0 8px;
 `;
 
-export const PokemonCard = ({ pokemon }: any) => {
+export const PokemonCard = ({ pokemon, berry }: any) => {
+  const feed = useCallback(() => {
+    alert(`${pokemon.name} eats your ${berry}!`);
+  }, []);
+
   return (
     <Card>
       <CardHeader>
@@ -76,7 +81,7 @@ export const PokemonCard = ({ pokemon }: any) => {
       </CardContent>
 
       <CardActions>
-        <Button>Cancel</Button>
+        <Button onClick={feed}>Feed</Button>
         <Button>Catch</Button>
       </CardActions>
     </Card>
