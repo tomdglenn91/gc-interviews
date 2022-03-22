@@ -59,17 +59,17 @@ const Button = styled.button`
   margin: 0 8px;
 `;
 
-export const PokemonCard = ({ pokemon, berry }: any) => {
-  const feed = useCallback(() => {
-    alert(`${pokemon.name} eats your ${berry}!`);
+export const UserCard = ({ user, tool }: any) => {
+  const use = useCallback(() => {
+    alert(`${user.name} uses the ${tool}!`);
   }, []);
 
   return (
     <Card>
       <CardHeader>
-        <CardAvatar url={`https://picsum.photos/25?${pokemon.name}`} />
+        <CardAvatar url={`https://picsum.photos/25?${user.name}`} />
         <CardTitleContainer>
-          <CardTitle>{pokemon.name}</CardTitle>
+          <CardTitle>{user.name}</CardTitle>
           <CardSubTitle>Some subtitle!</CardSubTitle>
         </CardTitleContainer>
       </CardHeader>
@@ -81,8 +81,8 @@ export const PokemonCard = ({ pokemon, berry }: any) => {
       </CardContent>
 
       <CardActions>
-        <Button onClick={feed}>Feed</Button>
-        <Button>Catch</Button>
+        <Button onClick={use}>Tool</Button>
+        <Button>Message</Button>
       </CardActions>
     </Card>
   );

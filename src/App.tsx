@@ -1,27 +1,19 @@
 import React, { useState } from "react";
-import { Berry, BerrySelect } from "./BerrySelect";
-import { PokemonCard } from "./PokemonCard";
-import { usePokemon, Pokemon } from "./use-pokemon";
+import { Tool, ToolSelect } from "./ToolSelect";
+import { UserCard } from "./UserCard";
+import { useUsers, User } from "./use-users";
 
 function App() {
-  const pokemon: Pokemon[] = usePokemon();
-  const [berry, setBerry] = useState<Berry>("Berry");
+  const users: User[] = useUsers();
+  const [tool, setTool] = useState<Tool>("Keyboard");
 
   return (
     <>
       <div>
-        <BerrySelect selectedBerry={berry} onBerrySelected={(b) => setBerry(b)}></BerrySelect>
+        <ToolSelect selectedTool={tool} onToolSelected={(t) => setTool(t)}></ToolSelect>
       </div>
 
-      <div>
-        {
-          /* Put the pokemon cards here! */
-          pokemon.map((data) => {
-            console.log(data);
-            return <PokemonCard pokemon={data} berry={berry} />;
-          })
-        }
-      </div>
+      <div>{/* Put the user cards here! */}</div>
     </>
   );
 }
